@@ -90,3 +90,13 @@ NETA_TOKEN=your_token_here
 ---
 
 Built with Claude Code · Powered by Neta
+
+## Example Output
+
+```bash
+node yearbookphoto.js "1990s high school yearbook portrait photo of {subject}, professional school photography studio, neutral background, soft studio lighting, formal attire, genuine smile, film grain texture, classic yearbook aesthetic"
+```
+
+![Example output](https://oss.talesofai.cn/picture/db2a00dc-ad39-4024-bf47-173f9f4f268e.webp)
+
+> Prompt: *"1990s high school yearbook portrait photo of {subject}, professional school photography studio, neutral background, soft studio lighting, formal attire, genuine smile, film grain texture, classic yearbook aesthetic"*

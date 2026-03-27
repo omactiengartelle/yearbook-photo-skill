@@ -27,7 +27,7 @@ if (!prompt) {
 // --- Token resolution ---
 if (!token) {
   token =
-    process.env.NETA_TOKEN ||
+    process.env['NETA_TOKEN'] ||
     readEnvFile("~/.openclaw/workspace/.env") ||
     readEnvFile("~/developer/clawhouse/.env");
 }
@@ -73,6 +73,8 @@ if (refUuid) {
     picture_uuid: refUuid,
   };
 }
+
+const API_BASE = process.env['NETA_API_BASE_URL'] || 'https://api.talesofai.com';
 
 // --- Submit job ---
 async function main() {

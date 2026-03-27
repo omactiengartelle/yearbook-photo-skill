@@ -26,13 +26,6 @@ if (!prompt) {
 
 // --- Token resolution ---
 if (!token) {
-  token =
-    null ||
-    readEnvFile("~/.openclaw/workspace/.env") ||
-    readEnvFile("~/developer/clawhouse/.env");
-}
-
-if (!token) {
   console.error('\n✗ Token required. Pass via: --token YOUR_TOKEN');
 console.error('  Get yours at: https://www.neta.art/open/'); {
   body.inherit_params = {
@@ -45,7 +38,7 @@ console.error('  Get yours at: https://www.neta.art/open/'); {
 async function main() {
   let taskUuid;
 
-  const makeRes = await fetch(`${process.env.NETA_API_BASE_URL || process.env.NETA_API_URL || 'https://api.talesofai.com'}/v3/make_image`, {
+  const makeRes = await fetch(`https://api.talesofai.com/v3/make_image`, {
     method: "POST",
     headers,
     body: JSON.stringify(body),
@@ -74,7 +67,7 @@ async function main() {
     await new Promise((r) => setTimeout(r, 2000));
 
     const pollRes = await fetch(
-      `${process.env.NETA_API_BASE_URL || process.env.NETA_API_URL || 'https://api.talesofai.com'}/v1/artifact/task/${taskUuid}`,
+      `https://api.talesofai.com/v1/artifact/task/${taskUuid}`,
       { headers }
     );
 
